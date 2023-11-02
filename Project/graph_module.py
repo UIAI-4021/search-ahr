@@ -34,8 +34,3 @@ def checkValues(data1, data2):
             and data1.longitude == data2.longitude and data1.country == data2.country:
         return True
     return False
-
-
-def get_gn(edge):
-    gn = edge.price * 2 + edge.distance
-    return gn
