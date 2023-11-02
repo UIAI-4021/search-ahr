@@ -19,3 +19,34 @@ def heuristic(key, destination):
     a = sin(lat_difference / 2) ** 2 + cos(source_lat) * cos(destination_lat) * sin(long_difference / 2) ** 2
     distance = 2 * asin(sqrt(a)) * 6371
     return distance
+
+
+def a_star_search(graph, source, destination):
+    startNode = graph.get_vertex(source)
+    stopNode = graph.get_vertex(destination)
+
+    if startNode is None or stopNode is None:
+        print("source or destination not found")
+
+    frontier = [startNode]
+    visited = []
+
+    distances = {startNode: 0}
+
+    while len(frontier) > 0:
+        lowest = frontier[0]
+
+        for i in range(1, len(frontier)):
+            fn1 = distances[frontier[i]] + heuristic(frontier[i].data, stopNode.data)
+            fn2 = distances[lowest] + heuristic(lowest.data, stopNode.data)
+            if fn1 < fn2:
+                lowest = frontier[i]
+
+        if lowest != stopNode:
+            for (key, value) in lowest.neighbors.items():
+                fnLowest = distances[lowest] + get_gn(value)
+                frontier.append(key)
+                distances[key] = fnLowest
+
+        visited.append(lowest)
+        frontier.remove(lowest)
