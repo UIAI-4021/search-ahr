@@ -1,7 +1,11 @@
 import heapq
+
+from pandas import Series
+from pandas.core.arrays import ExtensionArray
+
 from Time import Time
 from Dijkstra import Dijkstra
-from typing import Set, Any
+from typing import Set, Any, Union
 
 import networkx as nx
 import pandas as pd
@@ -27,8 +31,13 @@ for index, row in flight_data.iterrows():  # Extracting fields from data frame ,
     distance = row['Distance']
     price = row['Price']
     duration = row['FlyTime']
+    source_country = row['SourceAirport_Country']
+    destination_country = row['DestinationAirport_Country']
+    source_city = row['SourceAirport_City']
+    destination_city = row['DestinationAirport_City']
     flight_graph.add_edge(source_airport, destination_airport, distance=distance, price=price,
-                          duration=duration)  # Adding attributes
+                          duration=duration, source_country = source_country, destination_country = destination_country,
+                          source_city = source_city, destination_city = destination_city)  # Adding attributes
 
 
 
@@ -36,8 +45,10 @@ for index, row in flight_data.iterrows():  # Extracting fields from data frame ,
 starting_airport: str
 ending_airport: str
 
-starting_airport = input("Enter Source Airport : ")
-ending_airport = input("Enter Destination Airport: ")
+
+input_string = input("Enter Path: ")
+
+starting_airport, ending_airport = input_string.split(" - ")
 
 dijkstra = Dijkstra(flight_graph)
 time_inst = Time()
@@ -66,14 +77,24 @@ if shortest_path:
     print(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-")
     total_price = 0
     total_duration = 0
+    flight_NO = 1
     for i in range(len(shortest_path) - 1):
         departure_airport = shortest_path[i]
         arrival_airport = shortest_path[i + 1]
         flight_info = flight_graph[departure_airport][arrival_airport]
         total_price += flight_info['price']
         total_duration += flight_info['duration']
+        print(f"Flight #{flight_NO}")
         print(
-            f"From: {departure_airport} to {arrival_airport}, Distance: {flight_info['distance']} km, Price: ${flight_info['price']}, Duration: {flight_info['duration']} hours")
+
+            f" From: {flight_info['source_city']}-{departure_airport} . {flight_info['source_country']}\n "
+            f"To: {flight_info['destination_city']}-{arrival_airport} . {flight_info['destination_country']}\n"
+            f" Distance: {flight_info['distance']} km\n"
+            f" Price: ${flight_info['price']}\n"
+            f" Duration: {flight_info['duration']} hours")
+
+        flight_NO = flight_NO + 1
+        print("----------------------------")
     print(f"Total Distance: {total_distance} km")
     print(f"Total Price: ${total_price}")
     print(f"Total Duration: {total_duration} hours")
