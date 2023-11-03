@@ -17,11 +17,16 @@ class Dijkstra:
         self.previous_airports = {}
 
         while priority_queue:
-            current_distance, current_airport = heapq.heappop(priority_queue)
+            # The first vertex in the priority queue is the minimum distance vertex
+            # The list is ordered by the first element of each tuple (i.e., the distance)
+            # A min-heap is a specialized data structure where the element with the smallest value
+            # (in this case, the smallest distance) is always at the root (the top) of the heap.
+            current_distance = heapq.heappop(priority_queue)[0]
+            current_airport = heapq.heappop(priority_queue)[1]
 
             if current_airport == end:
                 path = []
-                while current_airport:
+                while current_airport:   # Adding airports recursively
                     path.insert(0, current_airport)
                     current_airport = self.previous_airports.get(current_airport)
                 return path, self.distances[end]
@@ -36,8 +41,9 @@ class Dijkstra:
                     self.previous_airports[neighbor] = current_airport
                     heapq.heappush(priority_queue, (total_distance, neighbor))
 
-        return None, float('inf')  # it means that the distance to a particular airport is undefined until a valid path is
-    # found.
+        return None, float('inf')
+        # it means that the distance to a particular airport is undefined until a valid path is
+        # found.
 
 
 
