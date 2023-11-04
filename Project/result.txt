@@ -1,0 +1,48 @@
+A* algorithm
+Execution Time : 0.0m0.01s
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+Flight #1
+From: Imam Khomeini International Airport , Iran
+To: EsenboÄa International Airport , Turkey
+Distance: 1676.121317120518Km
+Time: 2.582138282137289h
+Price: 808.060658560259$
+-------------------------------------
+Flight #2
+From: EsenboÄa International Airport , Turkey
+To: AtatÃ¼rk International Airport , Turkey
+Distance: 365.5490803612109Km
+Time: 0.954098236473554h
+Price: 152.77454018060547$
+-------------------------------------
+Flight #3
+From: AtatÃ¼rk International Airport , Turkey
+To: John F Kennedy International Airport , United States
+Distance: 8051.744239939527Km
+Time: 10.502166757688853h
+Price: 3995.8721199697634$
+-------------------------------------
+Flight #4
+From: John F Kennedy International Airport , United States
+To: Philadelphia International Airport , United States
+Distance: 150.6196040164646Km
+Time: 0.6871050981570989h
+Price: 45.309802008232296$
+-------------------------------------
+Flight #5
+From: Philadelphia International Airport , United States
+To: Baltimore/Washington International Thurgood Marshall Airport , United States
+Distance: 144.85222737502494Km
+Time: 0.6799406551242546h
+Price: 42.42611368751247$
+-------------------------------------
+Flight #6
+From: Baltimore/Washington International Thurgood Marshall Airport , United States
+To: Raleigh Durham International Airport , United States
+Distance: 411.5395463515959Km
+Time: 1.011229250126206h
+Price: 175.76977317579795$
+-------------------------------------
+Total Price: 5220.213007582171
+Total Distance: 10800.426015164341
+Total Time:16.416678279707256
