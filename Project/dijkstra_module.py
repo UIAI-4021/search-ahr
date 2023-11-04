@@ -23,9 +23,9 @@ class Dijkstra:
             if current_airport.data.airport == end:
                 path = []
                 while current_airport:
-                    path.insert(0, current_airport.data.airport)
+                    path.insert(0, current_airport)
                     current_airport = self.previous_airports.get(current_airport)
-                return path, self.distances[end]
+                return path
 
             if self.distances[current_airport.data.airport] < current_distance:
                 continue
@@ -37,6 +37,6 @@ class Dijkstra:
                     self.previous_airports[neighbor] = current_airport
                     heapq.heappush(priority_queue, (total_distance, neighbor))
 
-        return None, float('inf')
+        return None
         # it means that the distance to a particular airport is undefined until a valid path is
     # found.

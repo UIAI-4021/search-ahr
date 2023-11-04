@@ -48,7 +48,7 @@ def a_star_search(graph, source, destination):
                 fnLowest = distances[lowest] + get_gn(value)
                 if key in distances.keys():
                     if distances[key] > fnLowest:
-                        answer[key]=lowest
+                        answer[key] = lowest
                         distances[key] = fnLowest
                         if key in visited:
                             visited.remove(key)
@@ -58,5 +58,13 @@ def a_star_search(graph, source, destination):
                     distances[key] = fnLowest
                     answer[key] = lowest
 
+        elif lowest == stopNode:
+            path = []
+            while lowest:
+                path.insert(0, lowest)
+                lowest = answer[lowest]
+            return path
+
         visited.append(lowest)
         frontier.remove(lowest)
+    return None
