@@ -5,13 +5,10 @@ from data_module import *
 import pandas as pd
 
 
-if __name__ == '__main__':
-    pass
-
-
 def readData(input_values):
     df = pd.read_csv("Flight_Data.csv", encoding="latin-1", on_bad_lines="skip")
-    g = Graph()
+    graph = Graph()
+    dijkstra=Dijkstra(graph)
     size = len(df.SourceAirport_City)
     for i in range(0, size):
         source_data = Data(df.SourceAirport[i], df.SourceAirport_City[i], df.SourceAirport_Latitude[i],
@@ -23,5 +20,13 @@ def readData(input_values):
 
         edge = Edge(df.Distance[i], df.FlyTime[i], df.Price[i])
 
-        g.add_edge(edge, source_data, destination_data)
+        graph.add_edge(edge, source_data, destination_data)
+
+    starting_airport, ending_airport = input_values.split(" - ")
+    a_star_list=a_star_search(graph,starting_airport,ending_airport)
+    dijkstra_list=dijkstra.find_shortest_path(starting_airport,ending_airport)
+
+
+if __name__ == '__main__':
+    readData("Imam Khomeini International Airport - Raleigh Durham International Airport")
 

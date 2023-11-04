@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, data):
-        self.name = data
+        self.data = data
         self.neighbors = {}
 
     def add_neighbor(self, node, edge):
