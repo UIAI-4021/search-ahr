@@ -7,6 +7,13 @@ class Node:
         self.neighbors[node] = edge
 
 
+class Edge:
+    def __init__(self, distance, fly_time, price):
+        self.distance = distance
+        self.fly_time = fly_time
+        self.price = price
+
+
 class Graph:
     def __init__(self):
         self.vertices_num = 0
@@ -27,6 +34,12 @@ class Graph:
         node2 = self.check_vertex(destination_data)
 
         node1.add_neighbor(node2, edge)
+
+    def get_vertex(self, value):
+        for vertex in self.vertices:
+            if vertex.data.airport == value:
+                return vertex
+        return None
 
 
 def checkValues(data1, data2):
