@@ -1,5 +1,5 @@
 A* algorithm
-Execution Time : 0.0m0.01s
+Execution Time : 0.0m0.06s
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 Flight #1
 From: Imam Khomeini International Airport , Iran
@@ -43,6 +43,6 @@ Distance: 411.5395463515959Km
 Time: 1.011229250126206h
 Price: 175.76977317579795$
 -------------------------------------
-Total Price: 5220.213007582171
-Total Distance: 10800.426015164341
-Total Time: 16.416678279707256
+Total Price: 5220.213007582171$
+Total Distance: 10800.426015164341Km
+Total Time: 16.416678279707256h

@@ -63,14 +63,13 @@ def write_answer(list, execution, file_name, algorithm_name):
             total_price += price
             total_fly_time += fly_time
 
-        file.write("Total Price: " + str(total_price) + "\nTotal Distance: " +
-                   str(total_distance) + "\nTotal Time: " + str(total_fly_time))
+        file.write("Total Price: " + str(total_price) + "$\nTotal Distance: " +
+                   str(total_distance) + "Km\nTotal Time: " + str(total_fly_time)+"h")
 
 
 if __name__ == '__main__':
     readData()
-    # input_values=input("Enter source and destination : ")
-    input_values = "Imam Khomeini International Airport - Raleigh Durham International Airport"
+    input_values=input("Enter source and destination : ")
     starting_airport, ending_airport = input_values.split(" - ")
 
     a_star_time = Time()
