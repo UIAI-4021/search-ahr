@@ -1,0 +1,27 @@
+Dijkstra algorithm
+Execution Time : 0.0m0.0s
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+Flight #1
+From: Imam Khomeini International Airport , Iran
+To: AtatÃ¼rk International Airport , Turkey
+Distance: 2040.9788105605924Km
+Time: 3.035377404423096h
+Price: 990.4894052802962$
+-------------------------------------
+Flight #2
+From: AtatÃ¼rk International Airport , Turkey
+To: John F Kennedy International Airport , United States
+Distance: 8051.744239939527Km
+Time: 10.502166757688853h
+Price: 3995.8721199697634$
+-------------------------------------
+Flight #3
+From: John F Kennedy International Airport , United States
+To: Raleigh Durham International Airport , United States
+Distance: 686.5030412178495Km
+Time: 1.3527988089662726h
+Price: 313.25152060892475$
+-------------------------------------
+Total Price: 5299.613045858984$
+Total Distance: 10779.226091717968Km
+Total Time: 14.890342971078223h

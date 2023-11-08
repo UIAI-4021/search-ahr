@@ -54,7 +54,6 @@ dijkstra = Dijkstra(flight_graph)
 time_inst = Time()
 time_inst.Time_starting_()
 
-# Find the shortest flight route from 'San Francisco' to 'New York'.
 shortest_path, total_distance = dijkstra.find_shortest_path(starting_airport, ending_airport)
 
 time_inst.Time_Ending_()
