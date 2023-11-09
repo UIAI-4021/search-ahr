@@ -1,5 +1,5 @@
 PRICE = (205.21 * [duration]) + (-1786.53 * [days_left]) + (-291.90 * [departure_time_Afternoon]) + (9.99 * [departure_time_Early_Morning]) + (44.91 * [departure_time_Evening]) + (33.97 * [departure_time_Late_Night]) + (125.82 * [departure_time_Morning]) + (77.22 * [departure_time_Night]) + (971.42 * [stops_one]) + (1048.91 * [stops_two_or_more]) + (-1768.91 * [stops_zero]) + (-334.77 * [arrival_time_Afternoon]) + (-377.00 * [arrival_time_Early_Morning]) + (286.98 * [arrival_time_Evening]) + (-150.01 * [arrival_time_Late_Night]) + (-33.58 * [arrival_time_Morning]) + (247.53 * [arrival_time_Night]) + (10520.25 * [class_Business]) + (-10520.25 * [class_Economy]) + (20893.054517207303) 
-Training Time: 7.033s
+Training Time: 5.893s
 
 Logs:
 MSE: 49691276.72451339
