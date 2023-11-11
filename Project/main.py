@@ -26,7 +26,7 @@ def readData():
 
 
 def write_answer(list, execution, file_name, algorithm_name):
-    with open(file_name + ".txt", "w", encoding="utf8") as file:
+    with open(file_name, "w", encoding="utf8") as file:
         execution_time = round(execution, 2)
         minutes, seconds = divmod(execution_time, 60)
         file.write(algorithm_name + " algorithm\nExecution Time : " + str(minutes) + "m" + str(seconds) + "s" +
@@ -64,12 +64,14 @@ def write_answer(list, execution, file_name, algorithm_name):
             total_fly_time += fly_time
 
         file.write("Total Price: " + str(total_price) + "$\nTotal Distance: " +
-                   str(total_distance) + "Km\nTotal Time: " + str(total_fly_time)+"h")
+                   str(total_distance) + "Km\nTotal Time: " + str(total_fly_time) + "h")
+        file.close()
 
 
 if __name__ == '__main__':
     readData()
-    input_values=input("Enter source and destination : ")
+    # input_values = input("Enter source and destination : ")
+    input_values="Imam Khomeini International Airport - Raleigh Durham International Airport"
     starting_airport, ending_airport = input_values.split(" - ")
 
     a_star_time = Time()
@@ -82,5 +84,8 @@ if __name__ == '__main__':
     dijkstra_list = dijkstra.find_shortest_path(starting_airport, ending_airport)
     dijkstra_time.Time_Ending_()
 
-    write_answer(a_star_list, a_star_time.Execution(), "a_star", "A*")
-    write_answer(dijkstra_list, dijkstra_time.Execution(), "dijkstra", "Dijkstra")
+    a_star_filename = "[10]-UIAI4021-PR1-Q1([A star]).txt"
+    dijkstra_filename = "[10]-UIAI4021-PR1-Q1([Dijkstra]).txt"
+
+    write_answer(a_star_list, a_star_time.Execution(), a_star_filename, "A*")
+    write_answer(dijkstra_list, dijkstra_time.Execution(), dijkstra_filename, "Dijkstra")

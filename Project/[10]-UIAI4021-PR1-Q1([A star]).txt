@@ -1,5 +1,5 @@
 A* algorithm
-Execution Time : 0.0m0.06s
+Execution Time : 0.0m0.01s
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 Flight #1
 From: Imam Khomeini International Airport , Iran
